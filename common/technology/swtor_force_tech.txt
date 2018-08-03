@@ -1,0 +1,234 @@
+# ##################
+# FORCE Tech
+# ##################
+
+tech_force_I = {
+	cost = @tier2cost1
+	area = society
+	tier = 1
+	is_rare = yes
+	category = { force }
+	weight = @tier1weight3
+
+	gateway = force
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_dark_side
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_light_side
+		}
+		modifier = {
+			factor = 1.0
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_I"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_II"
+			}
+		}
+		modifier = {
+			factor = 1.50
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_III"
+			}
+		}
+
+	}
+
+}
+tech_force_II = {
+	cost = @tier3cost2
+	area = society
+	tier = 1
+	is_rare = yes
+	category = { force }
+	prerequisites = { "tech_force_I" }
+	weight = @tier2weight1
+
+	gateway = force
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_dark_side
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_light_side
+		}
+		modifier = {
+			factor = 1.0
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_I"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_II"
+			}
+		}
+		modifier = {
+			factor = 1.50
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_III"
+			}
+		}
+	}
+
+}
+tech_force_III = {
+	cost = @tier3cost3
+	area = society
+	tier = 2
+	is_rare = yes
+	category = { force }
+	prerequisites = { "tech_force_II" }
+	weight = @tier2weight2
+
+	gateway = force
+
+	# unlocks precognitive interface-component, combat-computer granting evasion to ships
+
+	#prereqfor_desc = {
+	#	component = {
+	#		title = "TECH_UNLOCK_COMBAT_COMPUTER_PRECOG_TITLE"
+	#		desc = "TECH_UNLOCK_COMBAT_COMPUTER_PRECOG_DESC"
+	#	}
+	#}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_dark_side
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_light_side
+		}
+		modifier = {
+			factor = 1.0
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_I"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_II"
+			}
+		}
+		modifier = {
+			factor = 1.50
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_III"
+			}
+		}
+	}
+
+}
+tech_force_IV = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	category = { force }
+	prerequisites = { "tech_force_III" }
+	weight = @tier3weight1
+
+	gateway = force
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_dark_side
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_light_side
+		}
+		modifier = {
+			factor = 1.0
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_I"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_II"
+			}
+		}
+		modifier = {
+			factor = 1.50
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_III"
+			}
+		}
+	}
+
+}
+
+tech_force_V = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	is_rare = yes
+	category = { force }
+	prerequisites = { "tech_force_IV" }
+	weight = @tier4cost1
+
+	gateway = force
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_dark_side
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_light_side
+		}
+		modifier = {
+			factor = 1.0
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_I"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_II"
+			}
+		}
+		modifier = {
+			factor = 1.50
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_sci_force_user_III"
+			}
+		}
+	}
+
+}

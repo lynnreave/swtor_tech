@@ -1,0 +1,528 @@
+###################
+# Droid Tech
+###################
+
+#Robotic Workers
+tech_robotic_workers = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = yes
+	category = { industry }
+	tier = 1
+	weight = @tier2weight1
+
+	gateway = robotics
+
+	## unlock robot POP lvl 1
+
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ethic = "ethic_gestalt_consciousness"
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ai_personality_behaviour = robot_exploiter }
+			NOT = { has_ai_personality_behaviour = robot_liberator }
+		}
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_mechanists
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+#Powered Exoskeletons
+tech_powered_exoskeletons = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = yes
+	category = { industry }
+	tier = 1
+	weight = @tier2weight1
+
+	gateway = robotics
+
+	modifier = {
+		army_damage_mult = 0.05
+		tile_resource_minerals_mult = 0.05
+	}
+
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+tech_early_utility_droids = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = yes
+	category = { industry }
+	tier = 1
+	weight = @tier2weight1
+
+	gateway = droid_development
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_astromech_droids = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_early_utility_droids" }
+	weight = @tier2weight1
+
+	gateway = droid_development
+
+	modifier = {
+		ship_speed_mult = 0.15
+		ship_fire_rate_mult = 0.05
+		science_ship_survey_speed  = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_starfighter_astromech_droids = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_astromech_droids" }
+	weight = @tier2weight1
+
+	modifier = {
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.10
+		ship_hull_regen_add_perc = 0.025
+		ship_armor_regen_add_perc = 0.025
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_protocol_droids = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_early_utility_droids" }
+	weight = @tier2weight1
+
+	gateway = droid_development
+
+	modifier = {
+		diplomacy_influence_cost = -0.15
+		country_trust_growth = 0.05
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_medical_droids = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_early_utility_droids" }
+	weight = @tier2weight1
+
+	gateway = droid_development
+
+	modifier = {
+		leader_age = 10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_extensive_medical_storage = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_medical_droids" }
+	weight = @tier2weight1
+
+	modifier = {
+		leader_age = 20
+
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_materialist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+###################
+# Planetary Starport Tech
+###################
+
+tech_transport_shuttlecraft = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { voidcraft }
+	tier = 1
+	prerequisites = { "tech_space_construction" }
+	weight = @tier2weight1
+
+	modifier = {
+		pop_migration_speed = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+tech_intergalactic_spaceports = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { voidcraft }
+	tier = 1
+	prerequisites = { "tech_intergalactic_spaceports" }
+	weight = @tier2weight1
+
+	modifier = {
+		pop_migration_speed = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+###################
+# Planetary Defenses Tech
+###################
+
+tech_fixed_defenses = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { industry }
+	tier = 1
+	prerequisites = { "tech_space_construction" }
+	weight = @tier2weight1
+
+	gateway = ground_defense
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		ai_weight = {
+			factor = 50
+		}
+}
+
+
+
+tech_advanced_target_tracking = {
+	cost = @tier2cost1
+	area = engineering
+	start_tech = no
+	category = { computing }
+	tier = 2
+	weight = @tier2weight2
+	prerequisites = { "tech_fixed_defenses" }
+
+	gateway = ground_defense
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 50
+	}
+}
+
+tech_atmospheric_starfighter_support = {
+	cost = @tier1cost1
+	area = engineering
+	start_tech = no
+	category = { voidcraft }
+	tier = 2
+	weight = @tier2weight2
+	prerequisites = { "tech_strike_craft_1" "tech_advanced_target_tracking" }
+
+	gateway = ground_defense
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 50
+	}
+}
+
+tech_heavy_plasma_ballistics = {
+	cost = @tier3cost1
+	area = engineering
+	start_tech = no
+	category = { particles }
+	tier = 3
+	weight = @tier3weight1
+	prerequisites = { "tech_advanced_target_tracking" }
+
+	gateway = ground_defense
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 50
+	}
+}
